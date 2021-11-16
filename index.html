@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Tutorial</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/artur.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="content">
+      <header>
+        <nav>
+          <h2 class="tableOfContent">Table of content</h2>
+          <ul class="tableContent">
+            <ul>
+              <li class="mainListstyle">
+                Intro
+                <ul class="liststyle">
+                  <li>list element</li>
+                  <li>list element</li>
+                </ul>
+              </li>
+
+              <li class="mainListstyle">
+                Counter
+                <ul class="liststyle">
+                  <li>list element</li>
+                  <li>list element</li>
+                </ul>
+              </li>
+
+              <li class="mainListstyle">
+                Burgermenu
+                <ul class="liststyle">
+                  <li>list element</li>
+                  <li>list element</li>
+                </ul>
+              </li>
+
+              <li class="mainListstyle">
+                Multitabs Section
+                <ul class="liststyle">
+                  <li data-topic="multitabs-intro">Section Intro</li>
+                  <li data-topic="arrays">Arrays</li>
+                  <li data-topic="array-methods-p1">Array Methods - Basic</li>
+                  <li data-topic="array-methods-p2">Array Methods- Advanced</li>
+                  <li data-topic="template-literals">Template Literals</li>
+                </ul>
+              </li>
+
+              <li class="mainListstyle">
+                Simple List
+                <ul class="liststyle">
+                  <li>list element</li>
+                  <li>list element</li>
+                </ul>
+              </li>
+            </ul>
+          </ul>
+          <div class="progressContainer">
+            <h3>Course Completion</h3>
+            <div class="progressBar"></div>
+          </div>
+        </nav>
+      </header>
+      <section class="contentContainer">
+        <!-- Here content will be cloned  -->
+      </section>
+    </div>
+
+    <!-- Multitabs intro -->
+    <template class="multitabs-intro">
+      <div class="TutArea" id="toBeDeleted">
+        <h2>Multitabs Section</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+            <div id="error-box"></div>
+
+            <p class="tut-txt">
+              Welcome to the fourth section of our JavaScript course. The main
+              goal of this section is to gain skills and knowledge to be able to
+              complete the final project - Multitab section, which is commonly
+              used in web development. In this section we will cover a few
+              important topics and features JavaScript has to offer. These
+              topics are:
+            </p>
+            <ul class="intro__ul" id="clone555">
+              <li>Arrays and its methods</li>
+              <li>Parameters in functions</li>
+              <li>Template literals</li>
+              <li>Switch Statement</li>
+              <li>SetAttribute</li>
+            </ul>
+          </section>
+          <div class="box-container">
+            <!-- <iframe
+              height="250px"
+              width="500px"
+              class="video-tut"
+              src="https://www.youtube.com/embed/c-I5S_zTwAc"
+            >
+            </iframe>
+            <textarea
+              type="text"
+              name="text"
+              id="code"
+              class="codeBox"
+            ></textarea> -->
+          </div>
+          <button class="btn-style submit-code">Submit</button>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+    <!-- Arrays -->
+    <template class="arrays">
+      <div class="TutArea">
+        <h2>Arrays</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+            <p>
+              Arrays is one of the main concepts in JavaScript programming. If
+              you want to learn JavaScript, then understanding of Arrays is
+              crucial.
+            </p>
+            <p>Array is basicaly a variable that has a multiple values</p>
+            <p class="code">const arr = ['Preben', 2, 'Matrix', true]</p>
+            <p>
+              As you can see, we declare arrays like we would do with variables.
+              The only difference is value. Stored values needs to be put in
+              square brackets "[ ]". Then we can start adding values followed by
+              coma ",". Arrays can store all kinds of values - string, number,
+              boolean(true/false), other arrays and objects. It means that array
+              does not care about value type
+            </p>
+            <p class="split">
+              Specific value from an array can be accessed be adding its index
+              number after calling array name.
+            </p>
+            <p class="code">
+              const names = ['Martin', 'Olivia', 'Emma', 'Sally']<br />
+              console.log(names[1])<br />
+              Output -> Olivia
+            </p>
+            <p>
+              Here you may ask why we got 'Olivia', even though we called
+              index:1. That's because in programming we count from 0. It means
+              that first index is 0, second is 1 etc.
+            </p>
+          </section>
+          <div class="box-container"></div>
+          <button class="btn-style submit-code">Submit</button>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+    <!-- Array methods part 1 -->
+    <template class="array-methods-p1">
+      <div class="TutArea">
+        <h2>Array methods - basics</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+            <p>
+              Array method is a function which is performed on an array. For
+              exemple in order to add a value to already existing array, we can
+              use <strong>'push'</strong> method.
+            </p>
+            <p class="code">
+              const numbers = [1,2,3,4,5,6]<br />
+              numbers<strong>.push(456)</strong><br />
+              console.log(numbers)<br />
+              Output -> [1,2,3,4,5,6,456]
+            </p>
+            <p>
+              As you can see, we call method by calling array's name and then
+              adding '.' and method name.
+            </p>
+            <p>
+              We can also get infomations about array by using methods. Most
+              basic and often used method is <strong>'length'</strong>. It
+              allows us to get the amount of the values stored in an an array.
+            </p>
+            <p class="code">
+              const animals = ['monkey','dog','parrot','elephant']<br />
+              console.log(animals<strong>.length</strong>)<br />
+              Output -> 4
+            </p>
+            <p>
+              In the example we used .length method and got 4. Which means, that
+              array consists of 4 elements
+            </p>
+            <p class="split">
+              Array comes with many built in methods, which we're not going to
+              cover in this tutorial. Ones worth mentioning are:<br />
+              shift, unshift, pop, concat, join, slice, sort, toString<br />
+              You can read more about them on
+              <a
+                style="color: blue"
+                href="https://www.w3schools.com/jsref/jsref_obj_array.asp"
+                >https://www.w3schools.com/jsref/jsref_obj_array.asp</a
+              >
+            </p>
+          </section>
+          <div class="box-container"></div>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+    <!-- Array methods part 2 -->
+    <template class="array-methods-p2">
+      <div class="TutArea">
+        <h2>Array methods - advanced</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+            <p>
+              In this section we will cover most used advanced array methods.
+              Why call I them advanced? That's because, they iterate through
+              each element of the array in order to do something. The most
+              commonly used method is <strong>forEach</strong>. This method will
+              iterate through each element in order to do something, important
+              thing to note is, that this function will not return anything. It
+              will just perfom the given action on each element of the array.
+            </p>
+            <p class="code">
+              const furnitures = ['table','chair','bed','wardrobe']<br />
+              furnitures.forEach(item => {<br />
+              console.log(item)<br />
+              }<br />
+              Output -> 'table' 'chair' 'bed' 'wardrobe'
+            </p>
+            <p>
+              In the exemple shown above, first we call a forEach method
+              followed by '.'. Then in parantes we need to give a parameter(its
+              name doesn't really matter). Then, using arrow function we are
+              executing console.log on each item in the array, and because the
+              furnitures array consists of 4 elements, we'll perform this code 4
+              times. forEach method is often used instead of for loop, cause it
+              does basically the same, just on arrays.
+            </p>
+            <p class="split">
+              We need to remember that forEach method does not return anything,
+              just completes given task on each element of the array. The method
+              that returns something and is executing given task is a
+              <strong>map</strong> method.
+            </p>
+            <p class="code">
+              const numbers = [1,2,3,4]<br />
+              const doubledNumbers = numbers.map(element => {<br />
+              return element * 2<br />
+              })<br />
+              console.log(doubledNumbers)<br />
+              Output -> [2,4,6,8]
+            </p>
+            <p>
+              In this code, we assigned doubledNumbers to numbers array, on
+              which we executed map method. Which returned doubled elements of
+              the numbers array. It's important to note, that we did'nt change
+              number array, just assigned it's value to newly created array
+            </p>
+          </section>
+          <div class="box-container"></div>
+          <button class="btn-style submit-code">Submit</button>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+    <!-- Template literals -->
+    <template class="template-literals">
+      <div class="TutArea">
+        <h2>Template literals</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+            <p>
+              String type is commonly used in JavaScript, unfortunately string
+              have its limitations. that's why in 2015 with ES6 template
+              literals(also called template strings, or super strings) got
+              introduced. They allow user to insert piece of code in string by
+              using <strong>${}</strong>. You can also create multiline string,
+              insert html code into them and much more. Template string is
+              created by putting a content inside backticks ``.
+            </p>
+            <p class="code">
+              const a = 'John' const b = 'Johnson' const c = `My name is ${a}
+              ${b}` Output c -> My name is John Johnson
+            </p>
+          </section>
+          <div class="box-container"></div>
+          <button class="btn-style submit-code">Submit</button>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>
