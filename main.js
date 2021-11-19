@@ -1,21 +1,30 @@
 const tableOfContentUl = document.querySelector(".tableContent")
 const contentContainer = document.querySelector(".contentContainer")
 let currentContentIndex
+const sectionDone = []
 
 // event delegation, was necessary to add event listeners
 // to the future html elements, which does not yet exist
 // if you want to add any event listener in contentContainer, fx. on some button or input, put it here
 contentContainer.addEventListener("click", (e) => {
+  // Next lesson button
   if (e.target.classList.contains("btn-next")) {
     const getNextLiData =
       allLi[currentContentIndex + 1].getAttribute("data-topic")
     changeSection(getNextLiData)
+    addSectionDone()
     currentContentIndex++
+    // Fuction to highlight the current li
+    currentLiHighlight(getSection())
+    // Previous Lesson button
   } else if (e.target.classList.contains("btn-prev")) {
     const getPrevLiData =
       allLi[currentContentIndex - 1].getAttribute("data-topic")
     changeSection(getPrevLiData)
+    addSectionDone()
     currentContentIndex--
+    // Fuction to highlight the current li
+    currentLiHighlight(getSection())
   } else {
     console.log("Missed")
   }
@@ -33,10 +42,11 @@ const changeSection = (dataAttribute) => {
 }
 
 // Select all .liststyle li
-const allLi = document.querySelectorAll(".liststyle li")
+const allLi = Array.from(document.querySelectorAll(".liststyle li"))
 allLi.forEach((element, index) => {
   element.addEventListener("click", () => {
     currentContentIndex = index
+    currentLiHighlight(element)
     // element data takes data-topic value, which is the name of the template class
     const elementData = element.getAttribute("data-topic")
     // if li has a data-topic attribute, so go further
@@ -45,6 +55,36 @@ allLi.forEach((element, index) => {
     }
   })
 })
+
+// get the current section function
+const getSection = () => {
+  return allLi.find((li) => {
+    return (
+      li.getAttribute("data-topic") ==
+      allLi[currentContentIndex].getAttribute("data-topic")
+    )
+  })
+}
+
+// Highlight the current selected section
+const currentLiHighlight = (highligthedElement) => {
+  allLi.forEach((li, index) => {
+    li.style.color = "#f9fffa"
+    if (index == currentContentIndex) {
+      highligthedElement.style.color = "blue"
+    }
+  })
+}
+
+const addSectionDone = () => {
+  const section = getSection()
+  if (!sectionDone.includes(section)) {
+    sectionDone.push(section)
+    sectionDone.forEach((li) => {
+      li.classList.add("done")
+    })
+  }
+}
 
 // Future cookies
 // let count = 0
