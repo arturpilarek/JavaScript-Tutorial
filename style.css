@@ -215,7 +215,7 @@ nav {
 }
 
 .done {
-  color: green !important;
+  color: green;
 }
 
 .done::after {
@@ -224,4 +224,8 @@ nav {
   font-weight: 900;
   content: "\f00c";
   color: green;
+}
+
+#highlight {
+  color: blue;
 }

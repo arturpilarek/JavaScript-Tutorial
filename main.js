@@ -23,7 +23,7 @@ contentContainer.addEventListener("click", (e) => {
     changeSection(getPrevLiData)
     addSectionDone()
     currentContentIndex--
-    // Fuction to highlight the current li
+    // Function to highlight the current li
     currentLiHighlight(getSection())
   } else {
     console.log("Missed")
@@ -69,9 +69,9 @@ const getSection = () => {
 // Highlight the current selected section
 const currentLiHighlight = (highligthedElement) => {
   allLi.forEach((li, index) => {
-    li.style.color = "#f9fffa"
+    li.removeAttribute("id")
     if (index == currentContentIndex) {
-      highligthedElement.style.color = "blue"
+      highligthedElement.id = "highlight"
     }
   })
 }
