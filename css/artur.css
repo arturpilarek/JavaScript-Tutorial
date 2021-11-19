@@ -12,13 +12,14 @@ a {
 }
 
 .code {
+  font-family: monospace;
   position: relative;
   margin: 1rem 0;
   padding: 1rem;
   width: fit-content;
-  color: rgba(255, 255, 255, 0.742);
+  color: cyan;
   border: 1px solid #e1e1e1;
-  background-color: #62acb5;
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .code::before {

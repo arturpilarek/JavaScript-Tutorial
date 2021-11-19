@@ -52,6 +52,7 @@
                   <li data-topic="switch-statement">Switch Statement</li>
                   <li data-topic="set-attribute">SetAttribute</li>
                   <li data-topic="multitabs-project-p1">Multi-Tabs container project part 1</li>
+                  <li data-topic="multitabs-project-p2">Multi-Tabs container project part 2</li>
                 </ul>
               </li>
 
@@ -395,6 +396,9 @@
         </div>
       </div>
     </template>
+
+    <!-- Multi-tabs project part 1 -->
+
     <template class="multitabs-project-p1">
       <div class="TutArea">
         <h2>Multi-Tabs section project part 1</h2>
@@ -406,9 +410,83 @@
               <li><a href="https://github.com/arturpilarek/changeTabs-withJS" style="color:blue" target="_blank">Link to the project with JS</a></li>
               <li><a href="https://arturpilarek.github.io/changeTabs-withJS/" style="color:blue" target="_blank">Link to the live demo</a></li>
             </ul>
+            <p class="split">So download one of the version and follow along. I need to point out, that HTML and CSS is not the part of this course, so i'll focus mainly on JavaScript. I assume that you've already downloaded the code in your editor, so let's jump right into it.</p>
+            <p class="split">Let's first take a look at html, which is very basic</p>
+            <h3 class="split">Explanation of html</h3>
+            <p>We have a div(.section__container) which contains an image placed on the left side and the content section on the right. Notice, that list items have a data-order attribute, which we'll need later on in Switch Statement.</p>
+            <h3 class="split">JavaScript</h3>
+            <p>We're starting out JavaScript with declaring a few variables and arrays.</p>
+            <p class="code">
+              const tabs = document.querySelectorAll(".section__tab")<br/>
+              const img = document.querySelector("img")<br/>
+              const contentContainer = document.querySelector(".section__content")<br/>
+              const images = [<br/>
+                "./assets/giraffe.jpg",<br/>
+                "./assets/hippo.jpg",<br/>
+                "./assets/eagle.jpg",<br/>
+                  ]<br/>
+              const content = [<br/>
+                "The giraffe (Giraffa) is an African artiodactyl mammal{...}",<br/>
+                'The hippopotamus, also called the hippo, common hippopotamus{...}',<br/>
+                "Eagle is the common name for many large birds of prey of the family Accipitridae{...}",<br/>
+              ]
+            </p>
+            <p>First variable is tabs, which contains html collection of all list items with our tabs name. Img and contentContainer stores our img tag and the container, where out content will be displayed. Then we have two arrays. Images array contains three strings with the path to images in assets folder, whereas content array have three string descriptions of animals.</p>
           </section>
           <div class="box-container"></div>
-          <button class="btn-style submit-code">Submit</button>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+    <!-- Multi-tabs project part2 -->
+
+    <template class="multitabs-project-p2">
+      <div class="TutArea">
+        <h2>Multi-Tabs section project part 2</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+            <p>I hope you understand the first part of this project. We have our basic variables and arrays assigned, so let's take a look at the core of the whole application - clickOnTab function</p>
+            <pre class='code'>
+              function clickOnTab() {
+                tabs.forEach((element) => {
+                  element.addEventListener("click", () => {
+
+                    tabs.forEach((tab) => {
+                      tab.style.backgroundColor = "#dae2ec"
+                    })
+
+                    switch (element.dataset.order) {
+                      case "0":
+                        // template string and setAttribute
+                        img.setAttribute("src", `${images[0]}`)
+                        contentContainer.innerHTML = `${content[0]}`
+                        element.style.backgroundColor = "white"
+                        break
+                      case "1":
+                        img.setAttribute("src", `${images[1]}`)
+                        contentContainer.innerHTML = `${content[1]}`
+                        element.style.backgroundColor = "white"
+                        break
+                      case "2":
+                        img.setAttribute("src", `${images[2]}`)
+                        contentContainer.innerHTML = `${content[2]}`
+                        element.style.backgroundColor = "white"
+                        break
+                    }
+                  })
+                })
+              }
+              clickOnTab()
+            </pre>
+            <p>There's a lot going on. But let's take it one step at the time. First we're declaring the clickOnTab function. Then, we're using forEach array method on each tab (li) element, and adding click event listener to every list item. This event listener makes two things.</p>
+            <p>- We're using another forEach method to reset all list items background color to default. We have to do that, otherwise tab would preserve highlight color after click on the other tab.</p>
+            <p>- Then in order to change content, image source and change highlight background color, we're using switch statement. As the parameter we're taking <code>element.dataset.order</code>. That's why we placed data-order in our html, to differate each list item. So if we click on the third element, function goes through the whole switch statement looking for the case, which meets requirement. In this case it's the case '2', and then the function is running the code inside that case.</p>
+          </section>
+          <div class="box-container"></div>
         </article>
         <div class="buttons">
           <button class="btn-style btn-prev">Previous Lesson</button>
