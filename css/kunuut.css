@@ -1,0 +1,15 @@
+.list{
+  padding-left:20px;
+}
+.list li{
+    margin:5px 0;
+    list-style: disc;
+}
+pre{
+  padding:10px;
+  color:cyan;
+  background-color:rgba(0,0,0, .75);
+}
+.headline3{
+  margin-top:15px;
+}

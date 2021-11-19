@@ -7,6 +7,7 @@
     <title>Javascript Tutorial</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/artur.css" />
+    <link rel="stylesheet" href="css/kunuut.css" />
     <script src="main.js" defer></script>
   </head>
   <body>
@@ -41,21 +42,30 @@
               </li>
 
               <li class="mainListstyle">
-                Multitabs Section
+                Multi-Tabs Container
                 <ul class="liststyle">
                   <li data-topic="multitabs-intro">Section Intro</li>
                   <li data-topic="arrays">Arrays</li>
                   <li data-topic="array-methods-p1">Array Methods - Basic</li>
                   <li data-topic="array-methods-p2">Array Methods- Advanced</li>
                   <li data-topic="template-literals">Template Literals</li>
+                  <li data-topic="switch-statement">Switch Statement</li>
+                  <li data-topic="set-attribute">SetAttribute</li>
+                  <li data-topic="multitabs-project-p1">Multi-Tabs container project part 1</li>
                 </ul>
               </li>
 
               <li class="mainListstyle">
                 Simple List
                 <ul class="liststyle">
-                  <li>list element</li>
-                  <li>list element</li>
+                  <li data-topic="simple-list-intro">List intro</li>
+                  <li data-topic="simple-list-editing-index">Editing index.html</li>
+                  <li data-topic="simple-list-editing-style">Editing style.css</li>
+                  <li data-topic="simple-list-editing-script-1">Editing script.js part 1</li>
+                  <li data-topic="simple-list-editing-script-2">Editing script.js part 2</li>
+                  <li data-topic="simple-list-editing-script-3">Editing script.js part 3</li>
+                  <li data-topic="simple-list-editing-script-4">Editing script.js part 4</li>
+                  <li data-topic="simple-list-editing-script-5">Editing script.js part 5</li>
                 </ul>
               </li>
             </ul>
@@ -68,13 +78,14 @@
       </header>
       <section class="contentContainer">
         <!-- Here content will be cloned  -->
+
       </section>
     </div>
 
     <!-- Multitabs intro -->
     <template class="multitabs-intro">
       <div class="TutArea" id="toBeDeleted">
-        <h2>Multitabs Section</h2>
+        <h2>Multi-tabs Section Intro</h2>
         <article class="tutorial">
           <section class="tutorial__section">
             <div id="error-box"></div>
@@ -82,14 +93,13 @@
             <p class="tut-txt">
               Welcome to the fourth section of our JavaScript course. The main
               goal of this section is to gain skills and knowledge to be able to
-              complete the final project - Multitab section, which is commonly
+              complete the final project - Multi-tabs section, which is commonly
               used in web development. In this section we will cover a few
               important topics and features JavaScript has to offer. These
               topics are:
             </p>
-            <ul class="intro__ul" id="clone555">
+            <ul class="intro__ul" >
               <li>Arrays and its methods</li>
-              <li>Parameters in functions</li>
               <li>Template literals</li>
               <li>Switch Statement</li>
               <li>SetAttribute</li>
@@ -208,7 +218,7 @@
               <a
                 style="color: blue"
                 href="https://www.w3schools.com/jsref/jsref_obj_array.asp"
-                >https://www.w3schools.com/jsref/jsref_obj_array.asp</a
+                target="_blank">https://www.w3schools.com/jsref/jsref_obj_array.asp</a
               >
             </p>
           </section>
@@ -299,12 +309,432 @@
               created by putting a content inside backticks ``.
             </p>
             <p class="code">
-              const a = 'John' const b = 'Johnson' const c = `My name is ${a}
-              ${b}` Output c -> My name is John Johnson
+              const a = 'John' <br/>const b = 'Johnson' <br/>const c = `My name is ${a}
+              ${b}` <br/>Output c -> My name is John Johnson
             </p>
+            <p class="split">
+              As you can see in the example shown above, template string allowed to inject variable value into the string value.
+            </p>
+            <p class="code">
+              const numbers = [1,2,3]<br/>
+              numbers.forEach(number => {<br/>
+              console.log(`Hello, i'm number ${number}`)<br/>
+              })<br/>
+              Output -> Hello, i'm number 1; Hello, i'm number 2; Hello, i'm number 3
+            </p>
+            <p>In this example we combined forEach method on the array to display messages in console. Template literals was used to inject the number output into the string. This way we got 3 messages with 3 different numbers. </p>
+            <p class="split">Template strings have many use cases , you can read more about them on <a style="color:blue"  target="_blank" href="https://www.w3schools.com/js/js_string_templates.asp">https://www.w3schools.com/js/js_string_templates.asp</a></p>
           </section>
           <div class="box-container"></div>
           <button class="btn-style submit-code">Submit</button>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+<!--      Switch Statemenet-->
+    <template class="switch-statement">
+      <div class="TutArea">
+        <h2>Switch statement</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+            <p>Switch statement is used to perform different actions based on different conditions. If it's sound like an 'if' statement, so you're right, they are quite similar. Even though 'if' statement is used much more frequently, it's still worth knowing 'switch', because it has its use cases. In switch statement we will get different result based on the parameter given in parentheses. Let's jump right into the example, so it will get much more understandable.</p>
+            <p class="code">
+              const fruit = 'Apple'<br/><br/>
+              switch(fruit) {<br/>
+              case 'Orange':<br/>
+              console.log('Orange juice')<br/>
+              break;<br/>
+              case 'Apple':<br/>
+              console.log('Apple juice')<br/>
+              break;<br/>
+              default:<br/>
+              console.log("Sorry, there's no juice we can offer")<br/>
+              }<br/>
+              Output -> Apple juice
+            </p>
+            <p>Switch statement checks the value of the 'fruit' variable, and returns the case output if it meets requirements. Let's take a look at the 'Orange' case. JS checks if 'Orange' is the same as fruit variable value. It's not, so the JS goes further, it goes to Apple case it meets requirements, so the output is 'Apple juice'. It's important to keep in mind 'break' keyword in switch statement. 'Break' word stops the case code. What would happen though if there's no case which meets requirements? Then the 'default' code is read. </p>
+            <p class="split">Switch statement is not that difficult to understand, but because is not used that often, it's easily forgettable. That's why there's documentation available online <a href="https://www.w3schools.com/js/js_switch.asp" target="_blank" style="color:blue">https://www.w3schools.com/js/js_switch.asp</a></p>
+          </section>
+          <div class="box-container"></div>
+          <button class="btn-style submit-code">Submit</button>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+    <template class="set-attribute">
+      <div class="TutArea">
+        <h2>SetAttribute</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+            <p>As you already know, html elements may have attributes, which store different values. The easiest example is 'src', which is used fx in image or link tags. JavaScript allows us to manipulate with these attributes and that's what 'setAttribute' is made for.</p>
+            <p class="code">
+              const someImage = document.querySelector('.randomImage')
+              someImage.setAttribute('src', 'https://source.unsplash.com/random/1600x900')
+            </p>
+            <p>In this simple example, setAttribute is used to add src attribute in order to display it as a random image from Unsplash website. The rule is simple, setAttribute takes two parameters. The first one is an attribute name and the second is its value. </p>
+            <p class="code">
+              const randomElement = document.querySelector('.randomElement')<br/>
+              randomElement.setAttribute('data-index', '2')<br/>
+              if (randomElement.dataset.index == 2) {<br/>
+              console.log('It's working!')}
+            </p>
+            <p>This example shows the use of data-attribute. data-index attribute was added to randomElement, and then we set condition if dataset is equal to two. It may seem obvious at the first glance, but sometimes in javascript we're working with many elements(fx. li) and to differ them from each other, we need to use data attribute.</p>
+          </section>
+          <div class="box-container"></div>
+          <button class="btn-style submit-code">Submit</button>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+    <template class="multitabs-project-p1">
+      <div class="TutArea">
+        <h2>Multi-Tabs section project part 1</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+            <p>The time has come! You've learned a lot during this course, and it's time to build something bigger. This section has a focus on the most used components in the web, and one of them is multi-tabs container. This section consists of 3 tabs, and when we click on them, image and content inside container will change. In the links below you will find working live version of this project, link to github without a javascript code, so you can follow along. If you'll get lost i'm attaching also the link to github with the finished project. You may just follow this tutorial or try to do it be yourself. </p>
+            <ul class="split">
+              <li><a href="https://github.com/arturpilarek/changeTabs-pre" style="color:blue" target="_blank">Link to the project without JS, so you can follow along</a></li>
+              <li><a href="https://github.com/arturpilarek/changeTabs-withJS" style="color:blue" target="_blank">Link to the project with JS</a></li>
+              <li><a href="https://arturpilarek.github.io/changeTabs-withJS/" style="color:blue" target="_blank">Link to the live demo</a></li>
+            </ul>
+          </section>
+          <div class="box-container"></div>
+          <button class="btn-style submit-code">Submit</button>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+
+    <!-- Kunuut -->
+    
+    <!-- Template Simple list intro -->
+    <template class="simple-list-intro">
+      <div class="TutArea">
+        <h2>Simple list</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+            <p>
+                In this small tutorial we are going to edit a list and <br>
+                use a input field and a button to add to the list, as well a button to delete a list item.
+            </p>
+            <h3 class="headline3">Setting up:</h3>
+            <p>Create a folder name <strong>simplelist</strong> in preffered location on your computer. Open the folder in preffered code editor and create following files:</p>
+            <ul class="list">
+                <li>index.html</li>
+                <li>style.css</li>
+                <li>script.js</li>
+            </ul>
+            <p>Clik on next lesson when you have those ready</p>
+          </section>
+          <div class="box-container"></div>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+    <!-- Template Editing index.html -->
+    <template class="simple-list-editing-index">
+      <div class="TutArea">
+        <h2>Edting index.html</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+            <h3>Type in the default html:</h3>
+            <p>
+              Open the index.html and add boilerplate html content by typing ! and then TAB.
+            </p>
+            <h3 class="headline3">Create link element in the head tag with the attributes:</h3>
+            <code>
+              href="style.css" rel="stylesheet"
+            </code>
+            <h3 class="headline3">And create script element the attributes as well:</h3>
+            <code>
+              src="script.js" defer
+            </code>
+            <h3 class="headline3">Creating elements in the body tag we are going to use in our app.</h3>
+            <ul class="list">
+              <li>h1 with the text:"My list".</li>
+              <li>The actual ul width an id: "myList"</li>
+              <li>Inside the ul, create li element with the id="inputLi" which we are gonna use this id when we style our input</li>
+              <li>
+                Inside the li, create a input element. This will have following attributes: <ul class="list">
+                  <li>type="text" <em>(Defines which input it is)</em></li>
+                  <li>id="newItemText" <em>(We will use this to select it in our script code)</em></li>
+                  <li>placeholder="New list item" <em>(This will show the text when it's empty)</em></li>
+                  <li>autofocus <em>(This will set the focus upon opening the index.html in a browser.)</em></li>
+                </ul>
+                <li>After the ul, create a button with the id attribute:"newItemBtn". Inside the button tags, text "+ Add new item"</li>
+              </li>
+            </ul>
+            <p>After the button we're done with the index.html, now it's a good time to open it in a browser.</p>
+            <p>After this we are gonna add minimal styling to this app. Click on next lesson</p>
+          </section>
+          <div class="box-container"></div>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+    <!-- Template Editing style.css -->
+    <template class="simple-list-editing-style">
+      <div class="TutArea">
+        <h2>Edting style.css</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+            <h3>Styling the list:</h3>
+            <p>
+              We're gonna do minimal style. We gonna style 6 things
+            </p>
+            <ul class="list">
+              <li>* (alle element)</li>
+              <li>body (creating some padding)</li>
+              <li>li (The list items)</li>
+              <li>#inputLi input (the text input we created)</li>
+              <li>#inputLi button (The button with the "+Add new item" text)</li>
+              <li>button (All the buttons that will be created on each list item)</li>
+            </ul>
+            <p>The css code is:</p>
+            <pre>
+<code>
+* {
+  font-size: 1em;
+  padding:5px;
+  font-family: sans-serif;
+}
+body{padding:40px 25%;}
+li{
+    display:flex;
+    justify-content: space-between;
+    padding:5px 0px;
+}
+#inputLi input{width:75%;}
+#inputLi button{width:25%;}
+button{
+    padding:5px;
+    cursor: pointer;
+}</code>
+              </pre>
+              <h3 class="headline3">
+                Break down the style:
+              </h3>
+              <ul class="list">
+                <li>*: font-size: 1em, resizing the font size for all elements, and creating some padding to them, as well setting the font family.</li>
+                <li>body: Creating top/bottom padding 40px and 25% of the page on the sides.</li>
+                <li>li: Changing the li display to flex so we can control how it shows it a bit more, as well a little padding on top.</li>
+                <li>#inputLi input: Resizing the with of the text input we created.</li>
+                <li>#inputLi button: Resizing the button to match the input field. 25+75=100% with.</li>
+                <li>button: Adding a little space in all button by padding 5 pixels and change the cursormouse to pointer on hovering the buttons.</li>
+              </ul>
+              <p>That's it for the styling.</p>
+          </section>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+    <!-- Template Editing script.js 1 -->
+    <template class="simple-list-editing-script-1">
+      <div class="TutArea">
+        <h2>Editing script.js - Define elements</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+            <h3>First we are going to define our elements.</h3>
+            <ul class="list">
+              <li>The list</li>
+              <li>The input field</li>
+              <li>The add button.</li>
+            </ul>
+            <h3 class="headline3">1. Define the list</h3>
+            <pre>
+<code>const myList = document.getElementById("myList")</code>
+            </pre>
+            <p><em>We define a const by saying get the element by the id ="myList" from the document(index.html). We will use this const element is our app.</em></p>
+            <h3 class="headline3">2. The same goes with the input text</h3>
+            <pre>
+<code>const newItemText = document.getElementById('newItemText')</code>
+            </pre>
+            <p><em>We are going to use the value of this const, which will be the text from the user.</em></p>
+            <h3 class="headline3">3. Define the button used to add the text typed by the user.</h3>
+            <pre>
+<code>const newItemBtn = document.getElementById('newItemBtn')</code>
+            </pre>
+            <p><em>We are gonne use this const element to add an event listener that will run a function everytime user clicks on it.</em></p>
+            <p>Click on next lesson.</p>
+          </section>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+    <!-- Template Editing script.js 2 -->
+    <template class="simple-list-editing-script-2">
+      <div class="TutArea">
+        <h2>Editing script.js - Define create new list item function</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+            <h3>Creating function that runs on click on the add button</h3>
+            <p>
+              Before we add the event listener to the button itself, <br>
+              we have to create a function that will add the new list item.
+            </p>
+          <h3>The function code:</h3>
+<pre><code>
+function createNewItem(){
+  if(newItemText.value == "") {
+    alert("You have to put something in the field");
+  }else{
+    const newLi = document.createElement('li');
+    newLi.textContent = newItemText.value;
+    newItemText.value = "";
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = "X";
+    deleteBtn.addEventListener('click', deleteItem);
+    newLi.appendChild(deleteBtn);
+    myList.appendChild(newLi);
+  }
+}
+</code></pre>
+          <h3>Break down the code:</h3>
+          <ul class="list">
+            <li>The if() statement checks if the input is empty. if it is it alerts the user with alert method</li>
+            <li>If it's not empty, it will run the else code:</li>
+            <li>We create a new const called newLi and define it by ("li") by using createElement method on the document.</li>
+            <li>Then we use the text value from the input text by using value method and assign it to the new li with textContent method. <br>
+              This takes the value from the input and put it on the new li</li>
+            <li>Then we reset the text field to empty state with the value method.</li>
+            <li>Then we create a new button</li>
+            <li>Then we put a "X" text in the button by using textContent </li>
+            <li>Then we add an eventlistener which will run the deleteItem function(we will create this in the next part) when the user clicks on the button</li>
+            <li>Then we use appendChild method to append the button to the li we created</li>
+            <li>Then we use appendChild method to actually append the new li we created(This will actually show the li element we created.) to our myList element.</li>
+          </ul>
+        </section>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+    <!-- Template Editing script.js 3 -->
+    <template class="simple-list-editing-script-3">
+      <div class="TutArea">
+        <h2>Editing script.js - Creating delete item function</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+            <h3>This will be short function.</h3>
+            <p>
+              In the function we wil use the event handler to see where the user has clicked. <br>
+              When the user creates a new list item, the code creates a button for every list item created. <br>
+              And we add an eventlistener to "listen" where the user clicks. We want to use that event to get the li element of that delete button.
+            </p>
+          <h3>The delete function :</h3>
+<pre><code>
+function deleteItem(event){
+  const targetLi = event.target.parentNode;
+  myList.removeChild(targetLi);
+}
+</code></pre>
+          <h3>Break down the code:</h3>
+          <ul class="list">
+            <li>Creating the function which will include the event "deleteItem(event)". In our case when the user "clicks"</li>
+            <li>Then we define const (the li element) by using event.target.parentNode. The following is the explanation of the code:
+            <ul class="list">
+              <li>event = The event is the click we defined in the create new list item function we created earlier.</li>
+              <li>target = where the user has clicked.</li>
+              <li>parentNode = the parent element of the target(button), which we know is the li element.</li>
+            </ul></li>
+            <li>Removing the whole li element (the text and the button), by using <strong>removeChild</strong> method from our list(myList)</li>
+          </ul>
+        </section>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+    <!-- Template Editing script.js 3 -->
+    <template class="simple-list-editing-script-4">
+      <div class="TutArea">
+        <h2>Editing script.js - Adding the eventlistener</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+            <h3>Last part - Adding the eventlistener</h3>
+            <p>
+              Lastly we are going to add the listener to the "+Add new item" button.
+            </p>
+          <h3>The code:</h3>
+<pre><code>
+newItemBtn.addEventListener('click', createNewItem);
+</code></pre>
+          <h3>Break down the code:</h3>
+          <ul class="list">
+            <li>newItemBtn = This is the button we defined in the beginning.</li>
+            <li>addEventListener('click', createNewItem)
+            <ul class="list">
+              <li>addEventListener = This is the event listener</li>
+              <li>'click' = Which event to "listen". </li>
+              <li>createNewItem = is the function that runs when the user clicks on the newItemBtn button.(Creates the actual list item)</li>
+            </ul></li>
+          </ul>
+          <p>This was the last piece of the puzzle. You can try your app now in a browser</p>
+        </section>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+    <!-- Template Editing script.js 5 -->
+    <template class="simple-list-editing-script-5">
+      <div class="TutArea">
+        <h2>Editing script.js - Extra</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+            <h3>Extra part - Adding a eventlistener to keys(keyboard)</h3>
+            <p>
+              Optionally we can add an event listener to the whole document, which listens if the user presses the "enter" key on the keyboard.
+            </p>
+          <h3>The code:</h3>
+<pre><code>
+  document.addEventListener("keyup", function (event) {
+      if(event.key == "Enter"){createNewItem();}
+  });
+</code></pre>
+          <h3>Break down the code:</h3>
+          <ul class="list">
+            <li>document.addEventListener = Listens to the whole document</li>
+            <li>"keyup" = Defines what to listen. Keyup is when a keyboard key is pressed and released.</li>
+            <li>function (event) = the code below will run if the user press any key on keyboard</li>
+            <li>If statement checks if the pressed key is the "enter" key, if it is it will run the createNewItem function/method.</li>
+          </ul>
+          <p>So the user instead of clicking on the actual "+Add new item" button, user can create the list item.</p>
+        </section>
         </article>
         <div class="buttons">
           <button class="btn-style btn-prev">Previous Lesson</button>
