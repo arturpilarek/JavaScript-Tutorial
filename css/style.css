@@ -387,3 +387,58 @@ nav {
   font-weight: bold;
   transform: scale(1.06) translateX(5px);
 }
+
+/* Artur css */
+.intro__ul {
+  margin-top: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.intro__ul li {
+  margin: 0.3rem;
+}
+
+.code {
+  font-family: monospace;
+  position: relative;
+  margin: 1rem 0;
+  padding: 1rem;
+  width: fit-content;
+  color: cyan;
+  border: 1px solid #e1e1e1;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.code::before {
+  position: absolute;
+  content: "example";
+  font-size: 0.6rem;
+  color: #e1e1e1;
+  left: 2px;
+  top: 2px;
+}
+
+.split {
+  margin-top: 1rem;
+}
+
+/* Kunuut css */
+.list {
+  padding-left: 20px;
+}
+.list li {
+  margin: 5px 0;
+  list-style: disc;
+}
+pre {
+  padding: 10px;
+  color: cyan;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.headline3 {
+  margin-top: 15px;
+}

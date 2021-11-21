@@ -5,55 +5,6 @@ let currentContentIndex = 0
 const sectionDone = []
 let progressAmount = 0
 
-/* modal cursor */
-
-const modalContent = () => {
-  document.querySelector(".end_modal").removeAttribute("id", "vanish")
-  let mouseCursor = document.querySelector(".cursor")
-
-  window.addEventListener("mousemove", cursor)
-
-  document.querySelector(".end_modal").addEventListener("click", (e) => {
-    var audio = document.getElementById("audio")
-    audio.play()
-    mouseCursor.classList.toggle("swing")
-    setTimeout(function () {
-      mouseCursor.classList.remove("swing")
-    }, 300)
-    if (e.target.classList.contains("splitIt")) {
-      let splitThis = e.target.innerText
-      let randNumber = getRandomNumber(splitThis.length)
-      let cutFirst = splitThis.slice(0, randNumber)
-      let cutLast = splitThis.slice(randNumber)
-      e.target.innerHTML =
-        `<p class="left-cut">${cutFirst}</p>` +
-        "  " +
-        `<p class="right-cut">${cutLast}</p>`
-    }
-  })
-
-  function getRandomNumber(number) {
-    return Math.floor(Math.random() * number)
-  }
-
-  document.querySelector(".exit-modal").addEventListener("mouseover", () => {
-    mouseCursor.style.display = "none"
-  })
-
-  document.querySelector(".exit-modal").addEventListener("mouseleave", () => {
-    mouseCursor.style.display = "block"
-  })
-
-  document.querySelector(".exit-modal").addEventListener("click", () => {
-    document.querySelector(".end_modal").style.display = "none"
-  })
-
-  function cursor(e) {
-    mouseCursor.style.top = e.pageY + "px"
-    mouseCursor.style.left = e.pageX + "px"
-  }
-}
-
 // event delegation, was necessary to add event listeners
 // to the future html elements, which does not yet exist
 // if you want to add any event listener in contentContainer, fx. on some button or input, put it here
@@ -78,6 +29,9 @@ contentContainer.addEventListener("click", (e) => {
     currentContentIndex--
     // Function to highlight the current li
     currentLiHighlight(getSection())
+  } else if (e.target.classList.contains("btn-finish")) {
+    document.querySelector(".end_modal").removeAttribute("id", "vanish")
+    modalContent()
   }
 })
 
@@ -152,6 +106,55 @@ const addSectionDone = () => {
       progressAmount++
       progressBar()
     }
+  }
+}
+
+// Lasse
+/* modal cursor */
+const modalContent = () => {
+  document.querySelector(".end_modal").removeAttribute("id", "vanish")
+  let mouseCursor = document.querySelector(".cursor")
+
+  window.addEventListener("mousemove", cursor)
+
+  document.querySelector(".end_modal").addEventListener("click", (e) => {
+    var audio = document.getElementById("audio")
+    audio.play()
+    mouseCursor.classList.toggle("swing")
+    setTimeout(function () {
+      mouseCursor.classList.remove("swing")
+    }, 300)
+    if (e.target.classList.contains("splitIt")) {
+      let splitThis = e.target.innerText
+      let randNumber = getRandomNumber(splitThis.length)
+      let cutFirst = splitThis.slice(0, randNumber)
+      let cutLast = splitThis.slice(randNumber)
+      e.target.innerHTML =
+        `<p class="left-cut">${cutFirst}</p>` +
+        "  " +
+        `<p class="right-cut">${cutLast}</p>`
+    }
+  })
+
+  function getRandomNumber(number) {
+    return Math.floor(Math.random() * number)
+  }
+
+  document.querySelector(".exit-modal").addEventListener("mouseover", () => {
+    mouseCursor.style.display = "none"
+  })
+
+  document.querySelector(".exit-modal").addEventListener("mouseleave", () => {
+    mouseCursor.style.display = "block"
+  })
+
+  document.querySelector(".exit-modal").addEventListener("click", () => {
+    document.querySelector(".end_modal").setAttribute("id", "vanish")
+  })
+
+  function cursor(e) {
+    mouseCursor.style.top = e.pageY + "px"
+    mouseCursor.style.left = e.pageX + "px"
   }
 }
 
