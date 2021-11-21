@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Javascript Tutorial</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/artur.css" />
     <link rel="stylesheet" href="css/kunuut.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
@@ -17,28 +17,45 @@
         <nav>
           <h2 class="tableOfContent">Table of content</h2>
           <ul class="tableContent">
-            <ul>
+            <ul class="pushContentUp">
               <li class="mainListstyle">
                 Intro
                 <ul class="liststyle">
-                  <li>list element</li>
-                  <li>list element</li>
+                  <li data-topic="intro">Welcome</li>
                 </ul>
               </li>
 
               <li class="mainListstyle">
                 Counter
                 <ul class="liststyle">
-                  <li>list element</li>
-                  <li>list element</li>
+                  <li data-topic="counter-intro">Section Intro</li>
+                  <li data-topic="variables">Variables</li>
+                  <li data-topic="var">- var</li>
+                  <li data-topic="const">- const</li>
+                  <li data-topic="let">- let</li>
+                  <li data-topic="functions">Functions</li>
+                  <li data-topic="operators">Operators</li>
+                  <li data-topic="dom">DOM</li>
+                  <li data-topic="eventlistener">EventListener</li>
+                  <li data-topic="innerhtml">InnerHTML</li>
+                  <li data-topic="counter">Counter</li>
+                  <li data-topic="counterpart2">Counter part 2</li>
                 </ul>
               </li>
 
               <li class="mainListstyle">
                 Burgermenu
                 <ul class="liststyle">
-                  <li>list element</li>
-                  <li>list element</li>
+                  <li data-topic="burgermenu-intro">BurgerMenu Intro</li>
+                  <li data-topic="Boolean">Boolean</li>
+                  <li data-topic="Conditional_Statements">Conditional Statements</li>
+                  <li data-topic="Conditional_Statements_ElseIf">Conditional Statements part 2</li>
+                  <li data-topic="Comparison_operators">Comparison Operators</li>
+                  <li data-topic="DOM_classList">DOM classList</li>
+                  <li data-topic="The_BurgerMenu">The BurgerMenu</li>
+                  <li data-topic="The_BurgerMenu_part2">The BurgerMenu - adding if/else statement</li>
+                  <li data-topic="The_BurgerMenu_part3">The BurgerMenu - classList modifying</li>
+                  <li data-topic="The_BurgerMenu_part4">The BurgerMenu - classList modifying part 2</li>
                 </ul>
               </li>
 
@@ -74,15 +91,1359 @@
           </ul>
           <div class="progressContainer">
             <h3>Course Completion</h3>
-            <div class="progressBar"></div>
+            <div id="progressBar"></div>
           </div>
         </nav>
       </header>
       <section class="contentContainer">
         <!-- Here content will be cloned  -->
-
       </section>
     </div>
+
+    <!-- Intro -->
+    <template class="intro">
+      <div class="TutArea" id="toBeDeleted">
+        <h2>Welcome!</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+
+            <p class="tut-txt">
+              Welcome to our course. In this course we're going to guide You through JavaScript fundamentals and give you tools to become the true JavaScript samurai!
+            </p>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+    
+  <!-- Counter intro -->
+<template class="counter-intro">
+  <div class="TutArea">
+    <h2>Counter Section</h2>
+    <article class="tutorial">
+      <section class="tutorial_section">
+        
+        <p>
+          Welcome to the second section of this JavaScript course. In this section we will learn about following topics:
+        </p>
+          <ul class="split">
+            <li>- Variables</li>
+            <li>- Functions</li>
+            <li>- Operators</li>
+            <li>- DOM</li>
+            <li>- EventListener</li>
+            <li>- InnerHTML</li>
+          </ul>
+        <p class="split">
+          The goal of this section is to be able to create a counter with a minus and plus button using JavaScript.
+        </p>
+
+      </section>
+      <div class="box-container"></div>
+    </article>
+
+    <div class="buttons">
+      <button class="btn-style btn-prev">Previous Lesson</button>
+      <button class="btn-style btn-next">Next Lesson</button>
+    </div>
+  </div>
+</template>
+
+
+<!-- Variables -->
+<template class="variables">
+  <div class="TutArea">
+    <h2>Variables</h2>
+    <article class="tutorial">
+      <section class="tutorial_section">
+        
+        <p>
+        Variables are written by first defining the variable type, then giving it a name and then assigning the variable a value.
+        </p>
+
+        <p class="code">
+        Var name = "value";
+        </p>
+
+        <p>
+          The value can also be defined later on, like this:
+        </p>
+
+        <p class="code">
+        Var name; <br>
+        name = "value";
+        </p>
+
+        <p>
+          If the value is a number, then there should not be "" marks around it, except if it is to be treated as a text string, as the "" marks it as a suchs.
+        </p>
+
+        <h3 class="split">Scope</h3>
+
+        <p class="split">
+        If a variable is declared outside of a function, or code blocks for let and const, then it has globally scope. What this means is that the variable can be accessed from any place in the JavaScript.
+        </p>
+        
+        <p class="split">
+        All variables have function scope. What this means is that if you define a variable inside of a function, then you cannot access this variable from outside the function.
+        </p>
+        
+        <p class="split">
+        Const and let have block scope. What this means is that if a variable is declared within curly brackets, then it cannot be accessed outside of the curly brackets.
+        </p>
+
+        <h3 class="split">
+        The different variables are:
+        </h3>
+
+<ul>
+  <li>- var</li>
+  <li>- const</li>
+  <li>- let</li>
+</ul>
+
+      </section>
+    </article>
+
+    <div class="buttons">
+      <button class="btn-style btn-prev">Previous Lesson</button>
+      <button class="btn-style btn-next">Next Lesson</button>
+    </div>
+  </div>
+</template>
+
+
+
+<!-- var -->
+<template class="var">
+  <div class="TutArea">
+    <h2>var</h2>
+    <article class="tutorial">
+      <section class="tutorial_section">
+        
+        <p>
+          var is the only variable type that can be both reassigned and redeclared.<br>
+        </p>
+
+        <h3 class="split">
+        Reassigning
+        </h3>
+
+        <article class="code">
+        <p>
+        var name = one;
+        </p>
+
+        <p class="split">
+        var name = two;
+        </p>
+        </article>
+
+        <h3>
+        Redeclared
+        </h3>
+
+        <article class="code">
+        <p>
+        var name = one;
+        </p>
+
+        <p class="split">
+        name = two;
+        </p>
+        </article>
+
+        <p>
+          Var is also the only variable type not to have block scope. 
+        </p>
+
+        <p>
+        Var has function scope which means that any var variable that is set within a function is local to this function. This function cannot be accessed from outside.
+        </p>
+
+        <p class="spilt">
+        Example
+        </p>
+
+        <article class="code">
+        <p>
+          function name(){ <br>
+          var name = "value"; <br>
+        }
+        </p>
+
+        <p class="split">
+        console.log(name)
+        </p>
+          
+        <p class="split">
+        ReferenceError: name is not defined
+        </p>
+        </article>
+
+        <p>
+        Since var does not have block scope, any var variable set inside of code blocks can be accessed globally.
+        </p>
+
+      </section>
+    </article>
+
+    <div class="buttons">
+      <button class="btn-style btn-prev">Previous Lesson</button>
+      <button class="btn-style btn-next">Next Lesson</button>
+    </div>
+  </div>
+</template>
+
+
+<!-- const -->
+<template class="const">
+  <div class="TutArea">
+    <h2>const</h2>
+    <article class="tutorial">
+      <section class="tutorial_section">
+        
+        <p>
+          const cannot be reassigned nor redeclared. There can still be more const variables with the same name, if the const variables are put in different scopes.
+        </p>
+
+        <p class="split">
+        Example:
+        </p>
+
+        <article class="code">
+        <p>
+          const name = one;
+        </p>
+
+        <p class="split">
+          .... { <br>
+            const name = two; <br>
+          };
+        </p>
+      </article>
+
+      <p>
+        In the above we have a const variable that is globally scoped, the one outside the curly brackets, and one that is block scoped, the one inside the curly brackets. Since they are in different scopes they can, for lack of better expression, coexist in the same JS document despite having the same name.
+      </p>
+
+      </section>
+    </article>
+
+    <div class="buttons">
+      <button class="btn-style btn-prev">Previous Lesson</button>
+      <button class="btn-style btn-next">Next Lesson</button>
+    </div>
+  </div>
+</template>
+
+
+
+<!-- let -->
+<template class="let">
+  <div class="TutArea">
+    <h2>let</h2>
+    <article class="tutorial">
+      <section class="tutorial_section">
+        
+        <p>
+        let can be redeclared but not reassigned. 
+        </p>
+
+        <h3 class="split">
+        Redeclared
+        </h3>
+
+        <article class="code">
+        <p>
+        let name = one;
+        </p>
+
+        <p class="split">
+        name = two;
+        </p>
+        </article>
+
+        <p>
+          Like with const, There can be more let variables with the same name, given that the variables are put in different scopes.
+        </p>
+
+        <p class="split">
+        Example:
+        </p>
+
+        <article class="code">
+        <p>
+          let name = one;
+        </p>
+
+        <p class="split">
+          .... { <br>
+            let name = two; <br>
+          };
+        </p>
+      </article>
+
+      <p>
+        In the above we have a let variable that is globally scoped, the one outside the curly brackets, and one that is block scoped, the one inside the curly brackets. Since they are in different scopes they can, for lack of better expression, coexist in the same JS document despite having the same name.
+      </p>
+
+      </section>
+    </article>
+
+    <div class="buttons">
+      <button class="btn-style btn-prev">Previous Lesson</button>
+      <button class="btn-style btn-next">Next Lesson</button>
+    </div>
+  </div>
+</template>
+
+
+
+<!-- Functions -->
+<template class="functions">
+  <div class="TutArea">
+    <h2>Functions</h2>
+    <article class="tutorial">
+      <section class="tutorial_section">
+        
+        <p>
+        A function is made by first defining that it is a function, then giving it a name, (), and then placing the code to be executed, upon calling the function, in the {}.
+        </p>
+
+        <p class="code">
+        Function name(parameter) { <br>
+        Code <br>
+        }; <br>
+        </p>
+
+        <p class="split">
+          Writing the function does not automatically execute it, it needs to be called upon to execute.
+        </p>
+
+        <p class="split">
+          We will focus on executing a function through an eventListener.
+        </p>
+
+        <p class="split">Example</p>
+
+        <article class="code">
+        <p>
+        function plus(){ <br>
+        aNumber++; <br>
+        };
+        </p>
+
+        <p class="split">
+        Btn.addEventListener("click", plus);
+        </p>
+        </article>
+
+        <p>
+          Above we have a function that when executed will add one to aNumber. Beneath the function there is an eventListener for a button that when clicked, wil execute the function.
+        </p>
+
+      </section>
+    </article>
+
+    <div class="buttons">
+      <button class="btn-style btn-prev">Previous Lesson</button>
+      <button class="btn-style btn-next">Next Lesson</button>
+    </div>
+  </div>
+</template>
+
+
+<!-- EventListener -->
+<template class="eventlistener">
+  <div class="TutArea">
+    <h2>EventListener</h2>
+    <article class="tutorial">
+      <section class="tutorial_section">
+        
+        <p>
+        An eventListener waits for a specific event to occur, when this event is happening, it calls the code written in the eventListener.
+        </p>
+
+        <p>
+        An eventListener is written like this:
+        </p>
+
+        <p class="code">
+        Element.addEventListener(event, function, useCapture);
+        </p>
+
+      </section>
+    </article>
+
+    <div class="buttons">
+      <button class="btn-style btn-prev">Previous Lesson</button>
+      <button class="btn-style btn-next">Next Lesson</button>
+    </div>
+  </div>
+</template>
+
+
+<!-- Operators -->
+<template class="operators">
+  <div class="TutArea">
+    <h2>Operators</h2>
+    <article class="tutorial">
+      <section class="tutorial_section">
+        
+        <p>
+          = Assignment, this is used to assign a value to a variable
+        </p>
+
+        <p class="split">
+          + Addition, the numbers on each side are put together 
+        </p>
+
+        <p class="split">
+          - Subtraction, the number on the left is subtracted by the number on the right 
+        </p>
+
+        <p class="split">
+          * Multiplication, the numbers on both side is multiplied by eachother 
+        </p>
+
+        <p class="split">
+          / Division, the number on the left is devided by the number on the right 
+        </p>
+
+        <p class="split">
+          == Equal, the value on each side is equal to eachother
+        </p>
+
+        <p class="split">
+          -- Decrement, the number decreases by one 
+        </p>
+
+        <p class="split">
+          ++ Increment, the number increases by one
+        </p>
+
+      </section>
+    </article>
+
+    <div class="buttons">
+      <button class="btn-style btn-prev">Previous Lesson</button>
+      <button class="btn-style btn-next">Next Lesson</button>
+    </div>
+  </div>
+</template>
+
+
+<!-- DOM -->
+<template class="dom">
+  <div class="TutArea">
+    <h2>DOM</h2>
+    <article class="tutorial">
+      <section class="tutorial_section">
+        
+        <p>
+        Using DOM we can access elements in the HTML, we can change or delete existing elements and add new. <br>
+        We will focus on getting access to elements in this segment. <br>
+        We can get access to elements using following methods:
+        </p>
+
+        <p class="code">
+        Document.getElementById <br>
+        Document.getElementByClassName <br>
+        Document.getElementByTagName
+        </p>
+
+        <p>
+        You can access the element by declaring it as a variable, this way you will only have to use the variable name to access it later. <br>
+        Example: 
+        </p>
+
+        <p class="code">
+        Const accessElement = document.getElementById(“element”)
+        </p>
+
+        <p>
+        You can also directly access the element when you need it. <br>
+        Example:
+        </p>
+
+        <p class="code">
+        document.getElementById(“element”).addEventListener("click", function);
+        </p>
+
+      </section>
+    </article>
+
+    <div class="buttons">
+      <button class="btn-style btn-prev">Previous Lesson</button>
+      <button class="btn-style btn-next">Next Lesson</button>
+    </div>
+  </div>
+</template>
+
+
+<!-- InnerHTML -->
+<template class="innerhtml">
+  <div class="TutArea">
+    <h2>InnerHTML</h2>
+    <article class="tutorial">
+      <section class="tutorial_section">
+        
+        <p>
+        Using innerHTML you can get the content of an HTML element or change the content of an element.
+        </p>
+
+        <p class="split">
+        You can get the content of a HTML element by accessing the element in a console.log and then writing innerHTML like this:
+        </p>
+        
+        <p class="code">
+        console.log(accessElement.innerHTML);
+        </p>
+
+        <p>
+        For this section about counters, you will need to use innerHTML to change the content. <br>
+        You can change the content of the accessed element by doing the following:
+        </p>
+
+        <p class="code">
+        accessElement.innerHTML = newContent;
+        </p>
+
+        <p>
+        or
+        </p>
+
+        <p class="code">
+        document.getElementById(“element”).innerHTML = newContent;
+        </p>
+
+      </section>
+    </article>
+
+    <div class="buttons">
+      <button class="btn-style btn-prev">Previous Lesson</button>
+      <button class="btn-style btn-next">Next Lesson</button>
+    </div>
+  </div>
+</template>
+
+
+<!-- Counter -->
+<template class="counter">
+  <div class="TutArea">
+    <h2>Counter part 1</h2>
+    <article class="tutorial">
+      <section class="tutorial_section">
+        
+        <p>
+        We start writing the JavaScript for the counter by getting access to the needed elements from the HTML. <br>
+        In this instance we do this by making them into variables.
+        </p>
+
+        <p class="code">
+        const minusBtn = document.getElementById("minus"); <br>
+        const plusBtn = document.getElementById("plus"); <br>
+        let numberCounter = document.getElementById("number");
+        </p>
+
+        <p>
+        Then we make a variable for the current number that the counter is on.
+        </p>
+
+        <p class="code">
+        let theNumber = 0;
+        </p>
+
+        <p>
+          We make a function for the minus button. The executing code will subtract theNumber variable with one, using the -- operator, and update the numberCounter element in the HTML, to the current theNumber, everytime the function is called.
+          </p>
+  
+          <p class="code">
+          function counterMinus(){ <br>
+              theNumber--; <br>
+              numberCounter.innerHTML = theNumber; <br>
+          };
+          </p>
+  
+          <p>
+          Like with the minus button, we make a function for the plus button. The executing code will add theNumber variable with one, using the ++ operator, and update the numberCounter element in the HTML, to the current theNumber, everytime the function is called.
+          </p>
+          
+          <p class="code">
+          function counterPlus(){ <br>
+              theNumber++; <br>
+              numberCounter.innerHTML = theNumber; <br>
+          }
+          </p>
+          
+          <p>
+          To make the buttons execute the functions, we add eventListeners to the buttons and add the events "click", so that when they are clicked, they will execute the corresponding functions.
+          </p>
+          
+          <p class="code">
+          minusBtn.addEventListener("click", counterMinus); <br>
+          plusBtn.addEventListener("click", counterPlus);
+          </p>
+
+        
+          
+      </section>
+    </article>
+
+    <div class="buttons">
+      <button class="btn-style btn-prev">Previous Lesson</button>
+      <button class="btn-style btn-next">Next Lesson</button>
+    </div>
+  </div>
+</template>
+
+
+
+<!-- Counter part 2 -->
+<template class="counterpart2">
+  <div class="TutArea">
+    <h2>Counter part 2</h2>
+    <article class="tutorial">
+      <section class="tutorial_section">
+        
+          <p>
+          The code in its full length will look like this:
+          </p>
+  
+          <article class="code">
+            <p>
+            const minusBtn = document.getElementById("minus"); <br>
+            const plusBtn = document.getElementById("plus"); <br>
+            let numberCounter = document.getElementById("number"); <br>
+          </p>
+            
+          <p class="split">
+            let theNumber = 0; <br>
+          </p>
+  
+          <p class="split">
+            function counterMinus(){ <br>
+                theNumber--; <br>
+                numberCounter.innerHTML = theNumber; <br>
+            }; <br>
+          </p>
+  
+          <p class="split">
+            function counterPlus(){ <br>
+                theNumber++; <br>
+                numberCounter.innerHTML = theNumber; <br>
+            } <br>
+          </p>  
+  
+          <p class="split">
+            minusBtn.addEventListener("click", counterMinus); <br>
+            plusBtn.addEventListener("click", counterPlus); <br>
+          </p>
+          </article>
+
+<p>
+          This is not the only way this can be done
+</p>
+
+<p class="split">
+Instead of accessing the HTML elements by first making them into variables, we could access them and add eventListeners to them directly. We could also write the functions directly inside the eventListeners. <br>
+This would result in the code looking like this:
+</p>
+
+<article class="code">
+<p>
+let theNumber = 0;
+</p>
+
+<p class="split">
+document.getElementById("minus").addEventListener("click", function(){ <br>
+    theNumber--; <br>
+    document.getElementById("number").innerHTML = theNumber; <br>
+});
+</p>
+
+<p class="split">
+document.getElementById("plus").addEventListener("click", function(){ <br>
+    theNumber++; <br>
+    document.getElementById("number").innerHTML = theNumber; <br>
+});
+</p>
+</article>
+
+      </section>
+    </article>
+
+    <div class="buttons">
+      <button class="btn-style btn-prev">Previous Lesson</button>
+      <button class="btn-style btn-next">Next Lesson</button>
+    </div>
+  </div>
+</template>
+
+    <!-- BurgerMenu Section-->
+    <template class="burgermenu-intro">
+      <div class="TutArea" id="toBeDeleted">
+        <h2>BurgerMenu Intro</h2>
+        <article class="tutorial">
+          <section class="tutorial__section">
+
+            <p class="tut-txt">
+              Welcome to the second section of our JavaScript course. The goal of this section is to gain skills and knowledge to be able to
+              complete the final project - a BurgerMenu, which is commonly
+              used in web development. In this section we will cover a few
+              important topics and features in JavaScript to complete the BurgerMenu. These
+              topics are:
+            </p>
+            <ul class="intro__ul" >
+              <li>Boolean</li>
+              <li>Conditional Statements</li>
+              <li>DOM classList</li>
+            </ul>
+          </section>
+          <div class="box-container">
+            <!-- <iframe
+              height="250px"
+              width="500px"
+              class="video-tut"
+              src="https://www.youtube.com/embed/c-I5S_zTwAc"
+            >
+            </iframe>
+            <textarea
+              type="text"
+              name="text"
+              id="code"
+              class="codeBox"
+            ></textarea> -->
+          </div>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+    
+
+    <!-- Boolean Section-->
+    <template class="Boolean">
+      <div class="TutArea" id="toBeDeleted">
+        <h2>Boolean</h2>
+        <article class="tutorial">
+            <p class="tut-txt">
+              A Boolean can be equal to one of two values: True or False. <br>
+              Everything in Javascript with a value is true, wise versa everything which doesn’t have a value is false. <br> <br>
+              To check this theory you can try using the Boolean() function to see what value they’re returning. <br> <br>
+              True Examples:
+              <br> <br>
+              <code class="code">
+                Boolean(“Hallo”); // Is true
+                <br> <br>
+                Boolean(5 > 2); // Is true
+              </code>
+              <br><br>
+              False Examples:
+              <code class="code">
+                Let x = 0;
+                <br>
+                Boolean(x); // Is False
+                <br> <br>
+                Let y = “ ”;
+                <br>
+                Boolean(y); // Is False
+              </code>
+              <br><br>
+              The Boolean value of an expression is the basis of all javascript conditions and comparisons.
+              <br> <br>
+              In next chapter we will teach you about conditions and comparisons.
+            </p>
+          <div id="error-box"></div>
+          <div class="box-container">
+            <!-- <iframe
+              height="250px"
+              width="500px"
+              class="video-tut"
+              src="https://www.youtube.com/embed/c-I5S_zTwAc"
+            >
+            </iframe>
+            <textarea
+              type="text"
+              name="text"
+              id="code"
+              class="codeBox"
+            ></textarea> -->
+          </div>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+    <!-- Conditional Statements-->
+    <template class="Conditional_Statements">
+      <div class="TutArea" id="toBeDeleted">
+        <h2>Conditional Statements</h2>
+        <article class="tutorial">
+            <p class="tut-txt">
+              One of the core elements of Javascript is conditional statement. It tells the code to run a specific block of code if a certain condition is meet. If this, do that. 
+              To start a conditional statement we use the word “If” in the code, and put parentheses next to it. In the parentheses with put the condition we want to check. 
+              Then we use the curly brackets to execute a block of code if the condition is true, or don’t run if the condition is false.
+              <br> <br>
+              Example:
+              <code class="code">
+                If (condition) {
+                  <br> <br>
+                  <em>Block of code.</em>
+                  <br> <br>
+                  }
+              </code>
+              <br> <br>
+              But what if we wanna run a different block of code if the condition is false? 
+              Then we have the “else” which will run if the condition in the If(condition) is equal to false. 
+              We put the else after the last curly bracket of the if statement, 
+              and add new curly brackets, to declare a new block of code.
+              <br> <br>
+              Example:
+              <code class="code">
+                If (condition) {
+                  <br> <br>
+                  <em>Block of code.</em>
+                  <br> <br>
+                  } else {
+                  <br> <br>
+                  <em>Block of code.</em>
+                  <br> <br>
+                  }
+              </code>
+              <p>The example above is what we call an If/else statement.</p>
+            </p>
+          <div id="error-box"></div>
+          <div class="box-container">
+            <!-- <iframe
+              height="250px"
+              width="500px"
+              class="video-tut"
+              src="https://www.youtube.com/embed/c-I5S_zTwAc"
+            >
+            </iframe>
+            <textarea
+              type="text"
+              name="text"
+              id="code"
+              class="codeBox"
+            ></textarea> -->
+          </div>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+    <!-- Conditional Statements Else/if-->
+    <template class="Conditional_Statements_ElseIf">
+      <div class="TutArea" id="toBeDeleted">
+        <h2>Conditional Statements part 2</h2>
+        <article class="tutorial">
+            <p class="tut-txt">
+              If we wanted to add multiple conditions to an If/else statement, we can use “else if”.
+              <br>
+              We put an “else if” in between of If and else. This where we can add another condition to check, if the first condition is false. 
+              If the first condition (If) return false, then check if the second condition (else if) is true or not, and then we have the else statement as a default block of code, 
+              if both conditions is false.
+              <br> <br>
+              It will look like this:
+              <code class="code">
+                If (condition) {
+                  <br> <br>
+                  <em>Block of code.</em>
+                  <br> <br>
+                  } else if (condition) {
+                  <br> <br>
+                  <em>Block of code.</em>
+                  <br> <br>
+                  }  else {
+                  <br> <br>
+                  <em>Block of code.</em>
+                  <br> <br>
+                  }
+              </code>
+              <p>The example above is what we call an If/else statement.</p>
+            </p>
+          <div id="error-box"></div>
+          <div class="box-container">
+            <!-- <iframe
+              height="250px"
+              width="500px"
+              class="video-tut"
+              src="https://www.youtube.com/embed/c-I5S_zTwAc"
+            >
+            </iframe>
+            <textarea
+              type="text"
+              name="text"
+              id="code"
+              class="codeBox"
+            ></textarea> -->
+          </div>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+    <!-- Comparison Operators-->
+    <template class="Comparison_operators">
+      <div class="TutArea" id="toBeDeleted">
+        <h2>Comparison operators</h2>
+        <article class="tutorial">
+            <p class="tut-txt">
+              In an earlier chapter we talked about operators.
+              <br><br>
+              This is where we going to use it. <br> 
+              We can use operators to check if conditions is true or false. 
+              <br> <br>
+              <strong>Short list of comparison operators:</strong>
+              <ul class="intro__ul" >
+                <li>== -> Equal to</li>
+                <li>!= -> Not equal to</li>
+                <li>> -> Greater than</li>
+                <li>< -> Less than</li>
+              </ul>
+              <br>
+              So, if we look at our if/else example in the previous chapter. We can then use these comparison operators to make a condition for the code to run.
+              <br> <br>
+              Example:
+              <code class="code">
+                  If (5 < 10) {
+                    <br> <br>
+                  <em>Block of code.</em>
+                  <br> <br>
+                  }  else {
+                    <br> <br>
+                  <em>Block of code.</em>
+                  <br> <br>
+                  }
+              </code>
+              So, the condition check if 5 is smaller than 10, and it is. So, the block of code in the If statement will run and then exit the if/else statement.
+              <br><br>
+              Another Example:
+            <code class="code">
+              If (horse == “vehicle”) {
+                <br> <br>
+              <em>Block of code.</em>
+              <br> <br>
+              }  else {
+                <br> <br>
+              <em>Block of code.</em>
+              <br> <br>
+              }
+          </code>
+            In the code above the condition is false, so the block of code in the else statement will run and then exit the if/else statement.
+            </p>
+          <div id="error-box"></div>
+          <div class="box-container">
+            <!-- <iframe
+              height="250px"
+              width="500px"
+              class="video-tut"
+              src="https://www.youtube.com/embed/c-I5S_zTwAc"
+            >
+            </iframe>
+            <textarea
+              type="text"
+              name="text"
+              id="code"
+              class="codeBox"
+            ></textarea> -->
+          </div>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+    <!-- DOM classList-->
+    <template class="DOM_classList">
+      <div class="TutArea" id="toBeDeleted">
+        <h2>DOM classList</h2>
+        <article class="tutorial">
+            <p class="tut-txt">
+              The classList property returns the class name(s) of an element. We can use this property with different methods like: add, remove and toggle to modify the classList property. 
+              <br> <br>
+              <strong>classList.add();</strong>
+              The add() method we can use to add a class to a specific element. So, to do this, we select the item first:
+              <br> <br>
+              Like this:
+              <code class="code">
+                document.querySelector(“.element”);
+              </code>
+              <br>
+              Afterwards we add the className like this:
+            <code class="code">
+              document.querySelector(“.element”).classList.add(“className”);
+          </code>
+          <br>
+          <hr>
+          <br>
+          <strong>classList.remove();</strong>
+          <br>
+          The remove() method is, as you guessed, the oppersite of add(). It will remove the class you pass into the parentheses.
+          <br> <br>
+          In code it looks like this:
+          <code class="code">
+            document.querySelector(“.element”).classList.remove(“className”);
+          </code>
+          <br>
+          <hr>
+          <br>
+          <strong>classList.toggle();</strong>
+          <br>
+          The toggle() method is like an on/off switch for classes, you could called it a combination of add() and remove(). It will toggle the class you pass into the parentheses on and off.
+          <br> <br>
+          In code it looks like this:
+          <code class="code">
+            document.querySelector(“.element”).classList.toggle(“className”);
+          </code>
+            </p>
+          <div id="error-box"></div>
+          <div class="box-container">
+            <!-- <iframe
+              height="250px"
+              width="500px"
+              class="video-tut"
+              src="https://www.youtube.com/embed/c-I5S_zTwAc"
+            >
+            </iframe>
+            <textarea
+              type="text"
+              name="text"
+              id="code"
+              class="codeBox"
+            ></textarea> -->
+          </div>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+    <!-- The BurgerMenu-->    
+    <template class="The_BurgerMenu">
+      <div class="TutArea" id="toBeDeleted">
+        <h2>The BurgerMenu</h2>
+        <article class="tutorial">
+            <p class="tut-txt">
+              Now that you have an understand of some different javascript concepts, 
+              we are gonna use them to make our awesome burgermenu.
+              <br> <br>
+              First of all, we need to select our burger menu from the html file, and assign it to a variable, to make it easier for us.
+              <br>
+              <br>
+              <strong>Like this:</strong>
+              <code class="code">
+              const burgerMenu = document.querySelector(“.element”);
+              </code>
+              <br>
+              Then we make another variable we can use to check if the menu has been opened or not. This where we going to assign a Boolean to check this.
+              <br>
+              <br>
+              <strong>It will look like this:</strong>
+              <code class="code">
+                const burgerMenu = document.querySelector(“.element”);
+                <br><br>
+                let IsOpened = false;
+              </code>
+              <br>
+              <hr>
+              <br>
+                We then have to add an eventlistener to make the burgermenu clickable, 
+                where we pass the event as "click", and make an anonymous function():
+              <br> <br>
+              <strong>You should have something like this:</strong>
+              <code class="code">
+                const burgerMenu = document.querySelector(“.element”);
+                <br><br>
+                let IsOpened = false;
+                <br><br>
+                burgerContainer.addEventListener("click", function () {
+                <br><br>
+                });
+              </code>
+            </p>
+          <div id="error-box"></div>
+          <div class="box-container">
+            <!-- <iframe
+              height="250px"
+              width="500px"
+              class="video-tut"
+              src="https://www.youtube.com/embed/c-I5S_zTwAc"
+            >
+            </iframe>
+            <textarea
+              type="text"
+              name="text"
+              id="code"
+              class="codeBox"
+            ></textarea> -->
+          </div>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+    <template class="The_BurgerMenu_part2">
+      <div class="TutArea" id="toBeDeleted">
+        <h2>The BurgerMenu - adding if/else statement</h2>
+        <article class="tutorial">
+            <p class="tut-txt">
+              <strong>Now you should have something like this:</strong>
+              <code class="code">
+                const burgerMenu = document.querySelector(“.element”);
+                <br><br>
+                let IsOpened = false;
+                <br><br>
+                burgerContainer.addEventListener("click", function () {
+                <br><br>
+                });
+              </code>
+              To get the burgermenu to do something when we click, we add an if/else statement, 
+              which is going to check a condition when clicked.
+              <br><br>
+              <strong>Like this:</strong>
+              <code class="code">
+                const burgerMenu = document.querySelector(“.element”);
+                <br><br>
+                let IsOpened = false;
+                <br><br>
+                burgerContainer.addEventListener("click", function () {
+                <br>
+                  if() {
+                    <br>
+                  } else {
+                  <br>
+                  }
+                <br>
+                });
+              </code>
+              <br>
+              Now we add the condition which is going to be checked.
+              <br> <br>
+              We are going to check if the IsOpened is equal to false, and if its true then we switch the IsOpened to true, and the oppersite in the else statement. <strong>like this:</strong>
+              <code class="code">
+                const burgerMenu = document.querySelector(“.element”);
+                <br><br>
+                let IsOpened = false;
+                <br><br>
+                burgerContainer.addEventListener("click", function () {
+                <br>
+                  if(IsOpened == false) {
+                    <br>
+                    IfOpen = true; <br>
+                  } else {
+                  <br>
+                  IfOpen = false; <br>
+                  }
+                <br>
+                });
+              </code>
+            </p>
+          <div id="error-box"></div>
+          <div class="box-container">
+            <!-- <iframe
+              height="250px"
+              width="500px"
+              class="video-tut"
+              src="https://www.youtube.com/embed/c-I5S_zTwAc"
+            >
+            </iframe>
+            <textarea
+              type="text"
+              name="text"
+              id="code"
+              class="codeBox"
+            ></textarea> -->
+          </div>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+    <template class="The_BurgerMenu_part3">
+      <div class="TutArea" id="toBeDeleted">
+        <h2>The BurgerMenu - classList modifying</h2>
+        <article class="tutorial">
+            <p class="tut-txt">
+              <strong>Now you should have something like this:</strong>
+              <code class="code">
+                const burgerMenu = document.querySelector(“.element”);
+                <br><br>
+                let IsOpened = false;
+                <br><br>
+                burgerContainer.addEventListener("click", function () {
+                <br>
+                  if(IsOpened == false) {
+                    <br>
+                    IfOpen = true; <br>
+                  } else {
+                  <br>
+                  IfOpen = false; <br>
+                  }
+                <br>
+                });
+              </code>
+              <br>
+              Now we want to add a class to show the content when the burger element is clicked. 
+              By default our css should set the content we want to show we hiding to display: none; <br>
+              And when we click we than add a class with display: block; in the css.
+              <br> <br>
+              <strong>It should look like this:</strong>
+              <code class="code">
+                const burgerMenu = document.querySelector(“.element”);
+                <br><br>
+                let IsOpened = false;
+                <br><br>
+                burgerContainer.addEventListener("click", function () {
+                <br>
+                  if(IsOpened == false) {
+                    <br>
+                    document.querySelector(".showBox").classList.add("Active");
+                    <br>
+                    IfOpen = true; <br>
+                  } else {
+                  <br>
+                  IfOpen = false; <br>
+                  }
+                <br>
+                });
+              </code>
+            </p>
+          <div id="error-box"></div>
+          <div class="box-container">
+            <!-- <iframe
+              height="250px"
+              width="500px"
+              class="video-tut"
+              src="https://www.youtube.com/embed/c-I5S_zTwAc"
+            >
+            </iframe>
+            <textarea
+              type="text"
+              name="text"
+              id="code"
+              class="codeBox"
+            ></textarea> -->
+          </div>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
+
+    <template class="The_BurgerMenu_part4">
+      <div class="TutArea" id="toBeDeleted">
+        <h2>The BurgerMenu - classList modifying part 2</h2>
+        <article class="tutorial">
+            <p class="tut-txt">
+              <strong>Now you should have something like this:</strong>
+              <code class="code">
+                const burgerMenu = document.querySelector(“.element”);
+                <br><br>
+                let IsOpened = false;
+                <br><br>
+                burgerContainer.addEventListener("click", function () {
+                <br>
+                  if(IsOpened == false) {
+                    <br>
+                    document.querySelector(".showBox").classList.add("Active");
+                    <br>
+                    IfOpen = true; <br>
+                  } else {
+                  <br>
+                  IfOpen = false; <br>
+                  }
+                <br>
+                });
+              </code>
+              <br>
+              We also want to remove the class again when the burger is clicked again. 
+              To do this we are just going to add the .remove("Active") in the else statement. <br>
+              <br> <br>
+              <strong>It should look like this:</strong>
+              <code class="code">
+                const burgerMenu = document.querySelector(“.element”);
+                <br><br>
+                let IsOpened = false;
+                <br><br>
+                burgerContainer.addEventListener("click", function () {
+                <br>
+                  if(IsOpened == false) {
+                    <br>
+                    document.querySelector(".showBox").classList.add("Active");
+                    <br>
+                    IfOpen = true; <br>
+                  } else {
+                    <br>
+                    document.querySelector(".showBox").classList.remove("Active");
+                  <br>
+                  IfOpen = false; <br>
+                  }
+                <br>
+                });
+              </code>
+              <br>
+              And there you have it! The famous burgermenu. Not that hard right? <br>
+              To keep it short, we selected the burgerContainer and made a variable with a boolean value.
+              <br>
+              We then added the eventlistener to the burgerContainer, where we made an if/else statement, to check if the IfOpened is equal to a boolean value of false.
+              In the block of code we then switched the IsOpened value to the oppersite boolean, to make the burger hide the content next time we click, and than again the oppersite.
+              <br>
+              Then we added the classList.add(), to show the content on the page when the burger is clicked. And the classList.remove() to hide it again.
+              <br>
+            </p>
+          <div id="error-box"></div>
+          <div class="box-container">
+            <!-- <iframe
+              height="250px"
+              width="500px"
+              class="video-tut"
+              src="https://www.youtube.com/embed/c-I5S_zTwAc"
+            >
+            </iframe>
+            <textarea
+              type="text"
+              name="text"
+              id="code"
+              class="codeBox"
+            ></textarea> -->
+          </div>
+        </article>
+        <div class="buttons">
+          <button class="btn-style btn-prev">Previous Lesson</button>
+          <button class="btn-style btn-next">Next Lesson</button>
+        </div>
+      </div>
+    </template>
 
     <!-- Multitabs intro -->
     <template class="multitabs-intro">
@@ -90,7 +1451,6 @@
         <h2>Multi-tabs Section Intro</h2>
         <article class="tutorial">
           <section class="tutorial__section">
-            <div id="error-box"></div>
 
             <p class="tut-txt">
               Welcome to the fourth section of our JavaScript course. The main
@@ -122,7 +1482,6 @@
               class="codeBox"
             ></textarea> -->
           </div>
-          <button class="btn-style submit-code">Submit</button>
         </article>
         <div class="buttons">
           <button class="btn-style btn-prev">Previous Lesson</button>
@@ -136,7 +1495,6 @@
       <div class="TutArea">
         <h2>Arrays</h2>
         <article class="tutorial">
-          <section class="tutorial__section">
             <p>
               Arrays is one of the main concepts in JavaScript programming. If
               you want to learn JavaScript, then understanding of Arrays is
@@ -166,9 +1524,7 @@
               index:1. That's because in programming we count from 0. It means
               that first index is 0, second is 1 etc.
             </p>
-          </section>
           <div class="box-container"></div>
-          <button class="btn-style submit-code">Submit</button>
         </article>
         <div class="buttons">
           <button class="btn-style btn-prev">Previous Lesson</button>
@@ -286,7 +1642,6 @@
             </p>
           </section>
           <div class="box-container"></div>
-          <button class="btn-style submit-code">Submit</button>
         </article>
         <div class="buttons">
           <button class="btn-style btn-prev">Previous Lesson</button>
@@ -328,7 +1683,6 @@
             <p class="split">Template strings have many use cases , you can read more about them on <a style="color:blue"  target="_blank" href="https://www.w3schools.com/js/js_string_templates.asp">https://www.w3schools.com/js/js_string_templates.asp</a></p>
           </section>
           <div class="box-container"></div>
-          <button class="btn-style submit-code">Submit</button>
         </article>
         <div class="buttons">
           <button class="btn-style btn-prev">Previous Lesson</button>
@@ -361,7 +1715,6 @@
             <p class="split">Switch statement is not that difficult to understand, but because is not used that often, it's easily forgettable. That's why there's documentation available online <a href="https://www.w3schools.com/js/js_switch.asp" target="_blank" style="color:blue">https://www.w3schools.com/js/js_switch.asp</a></p>
           </section>
           <div class="box-container"></div>
-          <button class="btn-style submit-code">Submit</button>
         </article>
         <div class="buttons">
           <button class="btn-style btn-prev">Previous Lesson</button>
@@ -369,6 +1722,7 @@
         </div>
       </div>
     </template>
+
     <template class="set-attribute">
       <div class="TutArea">
         <h2>SetAttribute</h2>
@@ -389,7 +1743,6 @@
             <p>This example shows the use of data-attribute. data-index attribute was added to randomElement, and then we set condition if dataset is equal to two. It may seem obvious at the first glance, but sometimes in javascript we're working with many elements(fx. li) and to differ them from each other, we need to use data attribute.</p>
           </section>
           <div class="box-container"></div>
-          <button class="btn-style submit-code">Submit</button>
         </article>
         <div class="buttons">
           <button class="btn-style btn-prev">Previous Lesson</button>
@@ -767,9 +2120,9 @@ function deleteItem(event){
               Lastly we are going to add the listener to the "+Add new item" button.
             </p>
           <h3>The code:</h3>
-<pre><code>
-newItemBtn.addEventListener('click', createNewItem);
-</code></pre>
+          <pre><code>
+          newItemBtn.addEventListener('click', createNewItem);
+          </code></pre>
           <h3>Break down the code:</h3>
           <ul class="list">
             <li>newItemBtn = This is the button we defined in the beginning.</li>

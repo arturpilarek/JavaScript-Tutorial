@@ -1,7 +1,9 @@
 const tableOfContentUl = document.querySelector(".tableContent")
 const contentContainer = document.querySelector(".contentContainer")
-let currentContentIndex
+const progress = document.getElementById("progressBar")
+let currentContentIndex = 0
 const sectionDone = []
+let progressAmount = 0
 
 // event delegation, was necessary to add event listeners
 // to the future html elements, which does not yet exist
@@ -16,6 +18,8 @@ contentContainer.addEventListener("click", (e) => {
     currentContentIndex++
     // Fuction to highlight the current li
     currentLiHighlight(getSection())
+    // Progrees Bar move
+    progressBar()
     // Previous Lesson button
   } else if (e.target.classList.contains("btn-prev")) {
     const getPrevLiData =
@@ -25,10 +29,16 @@ contentContainer.addEventListener("click", (e) => {
     currentContentIndex--
     // Function to highlight the current li
     currentLiHighlight(getSection())
-  } else {
-    console.log("Missed")
   }
 })
+
+let moveProcent = 100 / 40
+
+const progressBar = () => {
+  let moveBy = progressAmount
+  progress.innerText = Math.floor(moveBy * moveProcent) + "%"
+  progress.style.setProperty("--width", moveBy * moveProcent + "%")
+}
 
 // this function clones content from template and is inserting it into the contentContainer
 const changeSection = (dataAttribute) => {
@@ -43,6 +53,7 @@ const changeSection = (dataAttribute) => {
 
 // Select all .liststyle li
 const allLi = Array.from(document.querySelectorAll(".liststyle li"))
+
 allLi.forEach((element, index) => {
   element.addEventListener("click", () => {
     currentContentIndex = index
@@ -80,50 +91,22 @@ const addSectionDone = () => {
   const section = getSection()
   if (!sectionDone.includes(section)) {
     sectionDone.push(section)
+
+    progressAmount = sectionDone.length
+    console.log(sectionDone.length)
     sectionDone.forEach((li) => {
       li.classList.add("done")
     })
+    // if last element of section Done
+    if (sectionDone.length == 39) {
+      allLi[39].classList.add("done")
+      progressAmount++
+      progressBar()
+    }
   }
 }
+console.log(allLi.length)
 
-// Future cookies
-// let count = 0
-// const storage = window.localStorage
-
-// var test = new Date()
-
-// var date = test.getDate() + "/" + test.getMonth() + "/" + test.getFullYear()
-
-// console.log(date)
-
-// document.querySelector(".tableOfContent").addEventListener("click", () => {
-//   count++
-//   document.cookie = `amount=${count}; expires=${Date.now()}`
-// })
-
-// Future error handling in code box
-
-// function throw_msg() {
-//   try {
-//     var a = ""
-//     alert(b)
-//     console.lug("asdsa")
-//   } catch (throw_error) {
-//     document.getElementById("error-box").innerHTML = throw_error.message
-//     setTimeout(function () {
-//       document.getElementById("error-box").innerHTML = ""
-//     }, 2000)
-//   }
-// }
-
-// throw_msg()
-
-// window.onerror = function (e) {
-//   document.getElementById("error-box").innerHTML = e.toString()
-// }
-
-// setInterval(() => {
-//   for (let i = 0; i < true; i++) {
-//     console.lung(`asdsada ${i}`)
-//   }
-// }, 1)
+// At page load
+changeSection(allLi[0].getAttribute("data-topic"))
+currentLiHighlight(allLi[0])
