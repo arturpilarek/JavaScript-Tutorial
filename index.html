@@ -98,6 +98,17 @@
       <section class="contentContainer">
         <!-- Here content will be cloned  -->
       </section>
+      <audio id="audio" src="samples/mixkit-metal-hit-woosh-1485.wav"></audio>
+      <!--End Modal-->
+     <div id="vanish" class="end_modal">
+      <i class="fas fa-door-open exit-modal"></i>
+      <div class="cursor"></div>
+        <section class="modal_content">
+        <h2 class="splitIt">Congratulations, you made it!</h2>
+        <p><strong class="splitIt">Now you are a javascript samurai</strong></p>
+        <P class="splitIt">You are free to roam around the list, if you need to replay some sections, or just have a reminder. Good luck on your javascript journey!</P>
+        </section>
+      </div>
     </div>
 
     <!-- Intro -->
@@ -110,6 +121,15 @@
             <p class="tut-txt">
               Welcome to our course. In this course we're going to guide You through JavaScript fundamentals and give you tools to become the true JavaScript samurai!
             </p>
+            <p class="tut-txt">
+              During this course we will make 4 projects. Each of them is often used in web development. These projects are:
+            </p>
+            <ul class="intro_ul split">
+              <li>Counter</li>
+              <li>Burger Menu</li>
+              <li>Multi-tabs section</li>
+              <li>ToDo list</li>
+            </ul>
         </article>
         <div class="buttons">
           <button class="btn-style btn-prev">Previous Lesson</button>
@@ -631,15 +651,17 @@
   </div>
 </template>
 
-
-<!-- Counter -->
 <template class="counter">
   <div class="TutArea">
     <h2>Counter part 1</h2>
     <article class="tutorial">
       <section class="tutorial_section">
         
-        <p>
+        <ul>
+          <li><a href="https://github.com/CecilieCeen/counter" style="color:blue" target="_blank">Link to html and css for the counter</a></li>
+        </ul>
+
+        <p class="split">
         We start writing the JavaScript for the counter by getting access to the needed elements from the HTML. <br>
         In this instance we do this by making them into variables.
         </p>
@@ -700,7 +722,6 @@
     </div>
   </div>
 </template>
-
 
 
 <!-- Counter part 2 -->
